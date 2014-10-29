@@ -1,5 +1,100 @@
 <link rel="import" href="components/polymer/polymer.html">
+<!--
+`x-crew` encapsulates a crew page into a web component.
 
+      <x-crew id="crew">
+        <h2>Crew of Design Framework</h2>
+      </x-crew>
+
+`x-crew` has a title, many people objects composed by picture, social icons, name and role.
+
+Title:
+
+      <div id="container" class="container">
+        <content select="h2"></content>
+      </div>
+
+These values are described as content in the `x-crew` tag, as shown above.
+
+Picture:
+
+      <template repeat="{{ person in people }}">
+        <img id="people-picture" src="images/{{ person.picture }}">
+
+Name:
+    
+    <h2 id="name"> {{person.name}} </h2> 
+Role:
+
+    <h4 id="role"> {{person.role}}</h4>
+
+Social Icons:
+    
+    <table id="icons" align="center">
+      <tbody>
+        <td> <a href="http://facebook.com/{{ person.fbuser }} target="_blank" "> <img id="facebook-icon" src="images/official_facebook.png"> </a> </td>
+        <td> <a href="http://twitter.com/{{ person.twituser }}" target="_blank"> <img id="twitter-icon" src="images/official_twitter.png"> </a> </td>
+        <td> <a href="http://plus.google.com/{{ plusnumber }}" target="_blank"> <img id="google-icon" src="images/official_google.png"> </a> </td>
+      </tbody>
+    </table>
+
+
+These values are setted in the `demo.html` file, as described below:
+   
+
+    <script> 
+        var crew = document.getElementById('crew');
+        
+
+        var people = 
+          [
+            {
+              name: "Federico Spini" ,
+              role: "Developer",
+              picture: "FedericoSpini.jpg",
+              fbuser:"",
+              twituser:"",
+              plusnumber:""
+            },
+             {
+              name: "Enrico Marino" ,
+              role: "Developer",
+              picture: "EnricoMarino.jpg",
+              fbuser:"",
+              twituser:"",
+              plusnumber:""
+            },
+             {
+              name: "Andrea D'Amelio" ,
+              role: "Developer",
+              picture: "AndreaDAmelio.jpg",
+              fbuser:"",
+              twituser:"",
+              plusnumber:""
+            },
+            {
+              name: "Tiziano Sperati" ,
+              role: "Developer",
+              picture: "TizianoSperati.jpg",
+              fbuser:"",
+              twituser:"",
+              plusnumber:""
+            },
+            
+            ];
+
+          crew.people = people;
+
+      </script>
+
+
+
+
+@element x-projects
+@blurb Element providing page projects.
+@status alpha
+@homepage https://x-element.github.io/x-projects
+-->
 <polymer-element name="x-crew">
   <template>
  
