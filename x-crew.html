@@ -1,0 +1,109 @@
+<link rel="import" href="components/polymer/polymer.html">
+
+<polymer-element name="x-crew">
+  <template>
+ 
+    <link rel="stylesheet" href="components/bootstrap/bootstrap.min.css">
+
+    <style>
+      :host {
+        display: block;
+      }
+
+      body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'RobotoDraft', sans-serif;
+
+    }
+    h1 {
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 100;
+      text-align: center;
+    }
+    
+    h2 {
+      font-variant: small-caps;
+      font-weight: 100; 
+    }
+
+    #people-picture {
+      width: 200px;
+      height: 150px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid;
+    }
+
+    #name {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 300; 
+
+
+    }
+    #role {
+      text-align: center;
+      font-variant: small-caps;
+      font-weight: 300; 
+      font-size: 16px;
+    }
+
+    #container {
+      margin-bottom: 50px;
+    }
+
+    #facebook-icon {
+      height: 22px;
+      width: 22px;
+      margin: 5px;
+    }
+     #twitter-icon {
+      height: 22px;
+      width: 22px;
+      margin: 5px;
+
+    }
+     #google-icon {
+      height: 22px;
+      width: 22px;
+      margin: 5px;
+
+    }
+   
+    </style>
+
+    <div id="crew">
+      <div id="container" class="container">
+        <content select="h2"></content>
+      </div>
+
+      <template repeat="{{ person in people }}">
+        <div id="column" class="col-md-3">
+          <img id="people-picture" src="images/{{ person.picture }}">
+          <h2 id="name"> {{person.name}} </h2> <h4 id="role"> {{person.role}}</h4>
+          <table id="icons" align="center">
+            <tbody>
+              <td> <a href="http://facebook.com/{{ person.fbuser }} target="_blank" "> <img id="facebook-icon" src="images/official_facebook.png"> </a> </td>
+              <td> <a href="http://twitter.com/{{ person.twituser }}" target="_blank"> <img id="twitter-icon" src="images/official_twitter.png"> </a> </td>
+              <td> <a href="http://plus.google.com/{{ plusnumber }}" target="_blank"> <img id="google-icon" src="images/official_google.png"> </a> </td>
+            </tbody>
+          </table>
+        </div>
+      </template>
+    </div>
+
+    
+
+      
+  </template>
+  <script>
+   Polymer('x-crew', {
+
+      
+    });
+  </script>
+</polymer-element>

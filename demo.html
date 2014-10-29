@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<style> 
+		body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			font-family: 'RobotoDraft', sans-serif;
+
+		}
+		h1 {
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+			font-weight: 100;
+			text-align: center;
+		}
+		
+		h2 {
+			font-variant: small-caps;
+			font-weight: 300; 
+			text-align: center;
+		}
+ 		
+	</style>
+  <head>
+    <script src="components/platform/platform.js"></script>
+    <link rel="import" href="u-crew.html">
+    <link rel="import" href="components/font-roboto/roboto.html">
+
+
+
+  </head>
+
+  <body>
+	    <x-crew id="crew">
+	    	<h2>Crew of Design Framwork</h2>
+	    </x-crew>
+	    <script> 
+	    	var crew = document.getElementById('crew');
+	    	
+
+		   	var people = 
+			    [
+		        {
+		          name: "Federico Spini" ,
+		          role: "Developer",
+		          picture: "FedericoSpini.jpg",
+		          fbuser:"",
+		          twituser:"",
+		          plusnumber:""
+		        },
+		         {
+		          name: "Enrico Marino" ,
+		          role: "Developer",
+		          picture: "EnricoMarino.jpg",
+		          fbuser:"",
+		          twituser:"",
+		          plusnumber:""
+		        },
+		         {
+		          name: "Andrea D'Amelio" ,
+		          role: "Developer",
+		          picture: "AndreaDAmelio.jpg",
+		          fbuser:"",
+		          twituser:"",
+		          plusnumber:""
+		        },
+		        {
+		          name: "Tiziano Sperati" ,
+		          role: "Developer",
+		          picture: "TizianoSperati.jpg",
+		          fbuser:"",
+		          twituser:"",
+		          plusnumber:""
+		        },
+		        
+		      	];
+
+	      	crew.people = people;
+
+	    </script>
+  </body>
+</html>
